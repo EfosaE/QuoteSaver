@@ -1,4 +1,8 @@
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -25,19 +29,15 @@ a:hover {
 }
 
 body {
-  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -52,8 +52,16 @@ h1 {
   }
 }
 
-
-/* APP CUSTOM STYLES USUALLY, I WOULD USE TAILWIND */
+/* APP CUSTOM STYLES. USUALLY, I WOULD USE TAILWIND */
+.app-container {
+  margin-top: 80px;
+  width: 600px;
+  height: 100vh;
+}
+.quote-container {
+  display: flex;
+  flex-direction: column;
+}
 .quote-box {
   background: #fff;
   margin: 20px auto;
@@ -89,25 +97,15 @@ button:hover {
 }
 
 .favorites {
-  margin-top: 30px;
+  height: 300px;
+  overflow: scroll;
   text-align: left;
-  width: 60%;
+  padding: 0 20px;
   margin: 30px auto;
 }
+
 
 .favorites h2 {
   color: #333;
 }
 
-.favorites ul {
-  list-style: none;
-  padding: 0;
-}
-
-.favorites li {
-  background: #fff;
-  margin: 5px 0;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}

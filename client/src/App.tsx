@@ -21,7 +21,6 @@ function App() {
   const [quote, setQuote] = useState<string | Quote>(
     "Click 'New Quote' to fetch a quote."
   );
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [favorites, setFavorites] = useState<Quote[]>([]);
 
   // Fetch quote from URL
@@ -52,68 +51,74 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <h1
-        style={{
-          color: 'blue',
-        }}>
-        Quote Saver
-        <span
+    <div className='app-container'>
+      <div className='quote-container'>
+        <h1
           style={{
-            fontSize: '14px',
-            color: 'blueviolet',
-          }}>
-          By Efosa
-        </span>
-      </h1>
-      <div className='quote-box'>
-        <p
-          style={{
-            fontSize: '18px',
-            fontWeight: 'bold',
             color: 'blue',
           }}>
-          {typeof quote !== 'string' && quote.author}
-        </p>
-        <p
-          style={{
-            fontSize: '16px',
-            color: 'blueviolet',
-          }}>
-          {typeof quote === 'string' ? quote : quote.content}
-        </p>
+          Quote Saver
+          <span
+            style={{
+              fontSize: '14px',
+              color: 'blueviolet',
+            }}>
+            By Efosa
+          </span>
+        </h1>
+        <div className='quote-box'>
+          <p
+            style={{
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: 'blue',
+            }}>
+            {typeof quote !== 'string' && quote.author}
+          </p>
+          <p
+            style={{
+              fontSize: '16px',
+              color: 'blueviolet',
+            }}>
+            {typeof quote === 'string' ? quote : quote.content}
+          </p>
 
-        <div className='buttons'>
-          <button onClick={fetchQuote}>New Quote</button>
-          <button
-            onClick={() => {
-              if (typeof quote !== 'string') saveFavorite(quote);
-            }}
-            disabled={typeof quote === 'string'}>
-            Save
-          </button>
+          <div className='buttons'>
+            <button onClick={fetchQuote}>New Quote</button>
+            <button
+              onClick={() => {
+                if (typeof quote !== 'string') saveFavorite(quote);
+              }}
+              disabled={typeof quote === 'string'}>
+              Save
+            </button>
+          </div>
         </div>
-      </div>
-      <div className='favorites'>
-        <h2>Favorites</h2>
-        {favorites.length > 0 ? (
-          <ul>
-            {favorites.map((fav, index) => (
-              <p key={index}>
-                {fav.content}{' '}
-                <span
+        <div className='favorites'>
+          <h2>Favorites</h2>
+          {favorites.length > 0 ? (
+            <ul>
+              {favorites.map((fav, index) => (
+                <li
+                  key={index}
                   style={{
-                    fontSize: '14px',
-                    color: 'burlywood',
+                    paddingBottom: '8px',
                   }}>
-                  by {fav.author}
-                </span>
-              </p>
-            ))}
-          </ul>
-        ) : (
-          <p>No favorites yet.</p>
-        )}
+                  {fav.content}{' '}
+                  <span
+                    style={{
+                      fontSize: '14px',
+                      color: 'burlywood',
+                    }}>
+                    by {fav.author}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No favorites yet.</p>
+          )}
+        </div>
       </div>
     </div>
   );
