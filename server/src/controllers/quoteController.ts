@@ -5,10 +5,10 @@ import { saveQuoteToFile } from '../utils/file-util';
 export const getQuotes = async (req: Request, res: Response) => {
   try {
     const response = await axiosInstance.get('/random');
-    const quotes = response.data;
+    const quote= response.data;
     console.log(response.data);
     return res.status(200).json({
-      quotes,
+      quote,
     });
   } catch (error) {
     console.error('Error fetching the quote:', error);

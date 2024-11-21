@@ -1,3 +1,4 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -18,6 +19,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -25,7 +27,8 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -35,24 +38,6 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -65,4 +50,64 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+/* APP CUSTOM STYLES USUALLY, I WOULD USE TAILWIND */
+.quote-box {
+  background: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  /* height: 100px; */
+  width: 600px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.quote-box p {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.favorites {
+  margin-top: 30px;
+  text-align: left;
+  width: 60%;
+  margin: 30px auto;
+}
+
+.favorites h2 {
+  color: #333;
+}
+
+.favorites ul {
+  list-style: none;
+  padding: 0;
+}
+
+.favorites li {
+  background: #fff;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }

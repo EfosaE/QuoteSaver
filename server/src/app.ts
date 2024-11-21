@@ -1,7 +1,12 @@
 import express from 'express';
 import quoteRouter from './routes/quoteRoute';
+import cors from 'cors';
 
 const app = express();
+// allows all origins for the purpose of this task
+app.use(
+  cors()
+);
 // enables the app to read request body
 app.use(express.json());
 
